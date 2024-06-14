@@ -63,9 +63,8 @@ import sqlite3
 conn = sqlite3.connect('AnimalData.sqlite')
 cursor = conn.cursor()
 
-# code below must be commented after using it once
-# because species table is uniq in one database
-cursor.execute('''CREATE TABLE species        
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS species        
                (name VARCHAR(100),
                 family VARCHAR(100),
                 color VARCHAR(100),
